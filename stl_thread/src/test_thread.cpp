@@ -119,3 +119,43 @@ TEST(Test_Thread, Member_Func) {
     std::cout << "s2: " << s2 << std::endl;
     std::cout << "s3: " << s3 << std::endl;
 }
+
+TEST(Test_Thread, ThreadGroup) {
+    std::vector<std::thread> threads;
+    for (int i = 0; i < 10; ++i) {
+        threads.emplace_back(
+            [](int arg) {
+                std::cout << "lambda: " << arg << std::endl;
+            },
+            i
+        );
+    }
+    for (auto& t : threads) {
+        t.join();
+    }
+}
+
+TEST(Test_Thread, ThreadDetach) {
+    using namespace std::chrono_literals;
+    std::function<void()> func = []() {
+        std::thread t(foo, 1);
+        t.detach();
+    };
+    func();
+    std::this_thread::sleep_for(3s);
+}
+
+class class_demo {
+public:
+    static void print() {
+        std::cout << "class_demo:: " << m_i << std::endl;
+    }
+
+private:
+    const static int m_i = 100;
+};
+
+TEST(Test_Thread, Static_Member) {
+    std::thread t(&class_demo::print);
+    t.join();
+}
