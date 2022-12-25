@@ -1,0 +1,249 @@
+#file: noinspection StructuralWrap
+# clang-format file
+# version: 1.0
+# date: 2022/12/08
+# author: Jelin(skjsnb@163.com)
+# ref: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+# gist: https://gist.github.com/skjsnb/b8221e67e11c1a784b1bcda2c5a2fa0c
+
+# ---------------------------------------------------------
+# 文件参数
+# ---------------------------------------------------------
+
+# 语言标准
+Standard: c++11
+# 配置语言
+Language: Cpp
+
+# ---------------------------------------------------------
+# 常用配置
+# ---------------------------------------------------------
+
+# 每行的字符长度限制
+ColumnLimit: 100
+
+
+# ---------------------------------------------------------
+# 以下是代码风格相关参数
+# ---------------------------------------------------------
+# 访问修饰符偏移量
+AccessModifierOffset: -4
+# 圆括号对齐
+AlignAfterOpenBracket: BlockIndent
+# 结构性数组对齐
+AlignArrayOfStructures: Left #左对齐
+# 赋值对齐
+AlignConsecutiveAssignments:
+  Enabled: true           #是否启用
+  AcrossComments: false   #是否跨注释对齐
+  AcrossEmptyLines: false  #是否跨空行对齐
+  AlignCompound: false    #对齐连续赋值
+  PadOperators: true      #是否将短赋值运算符左填充为与长赋值运算符相同的长度
+# 连续比特域对齐
+AlignConsecutiveBitFields:
+  Enabled: false          #是否启用
+  AcrossComments: true    #是否跨注释对齐
+  AcrossEmptyLines: true  #是否跨空行对齐
+  AlignCompound: true     #对齐连续赋值
+  PadOperators: true      #是否将短赋值运算符左填充为与长赋值运算符相同的长度
+# 连续声明对齐
+AlignConsecutiveDeclarations:
+  Enabled: false          #是否启用
+  AcrossComments: true    #是否跨注释对齐
+  AcrossEmptyLines: false #是否跨空行对齐
+  AlignCompound: false    #对齐连续赋值
+  PadOperators: false     #是否将短赋值运算符左填充为与长赋值运算符相同的长度
+# 连续对齐宏
+AlignConsecutiveMacros:
+  Enabled: true           #是否启用
+  AcrossComments: true    #是否跨注释对齐
+  AcrossEmptyLines: true  #是否跨空行对齐
+  AlignCompound: true     #对齐连续赋值
+  PadOperators: true      #是否将短赋值运算符左填充为与长赋值运算符相同的长度
+# 反斜杠对齐
+AlignEscapedNewlines: Right #右对齐
+# 表达式对齐
+AlignOperands: AlignAfterOperator #与第一行的操作数对齐
+# 行注释对齐
+AlignTrailingComments: true
+# 是否允许所有的参数另起一行
+AllowAllArgumentsOnNextLine: true
+# 如果函数声明一行放不开情况下，是否允许函数声明里所有的参数里另起一行
+AllowAllParametersOfDeclarationOnNextLine: true
+# 是否允许合并大括号
+AllowShortBlocksOnASingleLine: Empty #允许空块
+# 是否允许将短的case块写在一行中
+AllowShortCaseLabelsOnASingleLine: true
+# 是否允许将短的枚举类型写在一行中
+AllowShortEnumsOnASingleLine: false
+# 是否允许将短的函数写在一行中
+AllowShortFunctionsOnASingleLine: Empty #允许空块
+# 是否允许将短的if语句块放在一行中
+AllowShortIfStatementsOnASingleLine: Never #不允许，需要调试打断点
+# 是否允许将短的lambda放在一行中
+AllowShortLambdasOnASingleLine: Empty #允许空块
+# 是否允许将短的循环结构放在一行中
+AllowShortLoopsOnASingleLine: false
+# 是否允许将函数返回值声明与函数名称分行
+AlwaysBreakAfterReturnType: None #不允许
+# 如果字符串变量是多行定义的，是否允许将变量名和内容分行
+AlwaysBreakBeforeMultilineStrings: false
+# 是否允许将模板声明与类型名称分行
+AlwaysBreakTemplateDeclarations: Yes
+# 属性宏列表
+AttributeMacros: [ ] #待添加
+# 实参封装
+BinPackArguments: false # 如果为false 则函数调用的参数要么在同一行，要么每行只有一个参数
+# 形参封装
+BinPackParameters: false # 如果为false 则函数调用的参数要么在同一行，要么每行只有一个参数
+# 位段声明中的冒号空格位置
+BitFieldColonSpacing: Both # 前后都有
+# 大括号样式
+BreakBeforeBraces: Custom # 自定义
+# 大括号配置
+BraceWrapping:
+  AfterCaseLabel: false #case 语句中是否大括号是否另起一行
+  AfterClass: false #类定义中大括号是否另起一行
+  AfterControlStatement: Never #流程控制语句中大括号是否另起一行
+  AfterEnum: false # 枚举定义中大括号是否另起一行
+  AfterFunction: false # 函数定义中大括号是否另起一行
+  AfterNamespace: false # 命名空间中大括号是否另起一行
+  AfterStruct: false # 结构体中大括号是否另起一行
+  AfterUnion: false #联合体中大括号是否另起一行
+  AfterExternBlock: false # extern "C" 语句中大括号是否另起一行
+  BeforeCatch: false # try-catch 语句中大括号是否另起一行
+  BeforeElse: true # else语句中大括号是否另起一行
+  BeforeLambdaBody: false #lambda语句中大括号是否另起一行
+  BeforeWhile: false #do-while语句中while前面的大括号是否另起一行
+  IndentBraces: false #大括号是否缩进
+  SplitEmptyFunction: false #空函数中大括号是否缩进
+  SplitEmptyRecord: true #空结构（class struct union）中大括号是否允许分行
+  SplitEmptyNamespace: true #空命名空间下大括号是否允许分行
+# 运算符换行配置
+BreakBeforeBinaryOperators: NonAssignment #在非赋值运算符情况下换行
+# concept 之前是否换行
+BreakBeforeConceptDeclarations: Always
+# ASM 冒号是否换行 clang-format 16 新特性
+#BreakBeforeInlineASMColon: Always
+# 三元运算符换行配置
+BreakBeforeTernaryOperators: true # 三元运算符总是在前边
+# 构造函数换行配置
+BreakConstructorInitializers: BeforeComma #符号在前
+# 继承列表换行配置
+BreakInheritanceList: BeforeColon #符号在后
+# 格式化是是否允许格式化字符串常量
+BreakStringLiterals: false #不允许
+# 注释参数配置 这些注释不应该拆分或其他方式格式化
+CommentPragmas: "" # 待添加
+# 连续命名空间的声明是否允许放在同一行中
+CompactNamespaces: false
+# 构造函数缩进宽度
+ConstructorInitializerIndentWidth: 4
+# 连续缩进宽度
+ContinuationIndentWidth: 4
+# 是否启用C++11风格大括号
+Cpp11BracedListStyle: true
+# 是否使用CRLF文件结尾
+DeriveLineEnding: true
+# 是否禁用格式化
+DisableFormat: false
+# 访问修饰符后面是否放置空行
+EmptyLineAfterAccessModifier: Never
+# 访问修饰符前面是否放置空行
+EmptyLineBeforeAccessModifier: LogicalBlock #只有在前面有内容的情况下会放置空行
+# 是否在命名空间的结尾增加注释
+FixNamespaceComments: true
+# foreach 宏定义列表, 列表内容将解释为foreach而不是函数调用
+ForEachMacros: [ ] #待添加
+# if 宏定义列表，列表内容将解释为条件语句而不是函数调用
+IfMacros: [ ] # 待添加
+# include 块排序配置
+IncludeBlocks: Regroup #对include自动分组，再进行排序
+# include 类别配置
+# IncludeCategories 待添加
+# IncludeIsMainRegex 待添加
+# IncludeIsMainSourceRegex 待添加
+# 访问修饰符是否允许缩进
+IndentAccessModifiers: false
+# case 语句是否允许缩进
+IndentCaseLabels: false
+# extern "C" 内容是否允许缩进
+IndentExternBlock: NoIndent
+# goto 语句是否允许缩进
+IndentGotoLabels: true
+# 预处理指令前缀是否缩进
+IndentPPDirectives: BeforeHash # 允许缩进
+# requires 语句缩进
+IndentRequiresClause: false
+# 缩进宽度
+IndentWidth: 4
+# 返回值与函数名缩进
+IndentWrappedFunctionNames: false
+# 宏定义 宏块开始 列表 (需正则匹配)
+MacroBlockBegin: ""
+# 宏定义 宏块结束 列表 (需正则匹配)
+MacroBlockEnd: ""
+# 最大空行数
+MaxEmptyLinesToKeep: 2
+# 命名空间缩进
+NamespaceIndentation: None #不缩进
+# 命名空间宏 列表
+NamespaceMacros: [ ]
+# 构造函数风格设定
+PackConstructorInitializers: CurrentLine #尝试放在一行中，如果不合适，则为每一个另起一行
+# 指针符号对齐
+PointerAlignment: Left
+# 限定符顺序
+# QualifierOrder: ['inline', 'static', 'type', 'const', 'volatile']
+# 引用符号对齐
+ReferenceAlignment: Left
+# 注释是否遵守 ColumnLimit 规则
+ReflowComments: false
+# 块定义分离
+SeparateDefinitionBlocks: Always #总是在块与块之间插入空行
+# 封装namespace的最小行数
+ShortNamespaceLines: 0
+# 是否启用 using 排序
+SortUsingDeclarations: true
+# 是在否在 C 风格强制转换中插入空格
+SpaceAfterCStyleCast: false
+# 是否在逻辑运算符后面插入空格
+SpaceAfterLogicalNot: false
+# 是否在模板 template 关键字后面插入空格
+SpaceAfterTemplateKeyword: false
+# 是否在指针符号 * 之前或之后放置空格
+SpaceAroundPointerQualifiers: After #在后面插入空格
+# 赋值运算符之前是否有空格
+SpaceBeforeAssignmentOperators: true
+# case语句中的冒号之前是否有空格
+SpaceBeforeCaseColon: false
+# C++11 大括号列表之前是否插入空格
+SpaceBeforeCpp11BracedList: true
+# 构造函数中的冒号之前是否有空格
+SpaceBeforeCtorInitializerColon: false
+# 继承中的冒号之前是否有空格
+SpaceBeforeInheritanceColon: false
+# for循环中的冒号之前是否有空格
+SpaceBeforeRangeBasedForLoopColon: true
+# 空块中是否有空格
+SpaceInEmptyBlock: true
+# 空圆括号中是否有空格
+SpaceInEmptyParentheses: false
+# 行注释之前的空格数
+SpacesBeforeTrailingComments: 2
+# 模板尖括号中是否有空格
+SpacesInAngles: Never
+# 是否在条件语句中插入空格
+SpacesInConditionalStatement: false
+# 行注释开头最大空格数
+SpacesInLineCommentPrefix:
+  Maximum: -1 #禁用
+  Minimum: 0
+# 忽略的宏定义
+StatementAttributeLikeMacros: [ ]
+# 制表符宽度
+TabWidth: 4
+# 使用CRLF
+UseCRLF: true
+# 是否使用制表符
+UseTab: Never
